@@ -1,3 +1,3 @@
 export const Button = () => {
-  return <button className="rounded-xl p-12 text-red-700 bg-amber-700">Button LIBRARY</button>
-}
+  return <button className="rounded-xl p-12 bg-brand-context-live text-brand-neutral-white-100">Button LIBRARY</button>;
+};

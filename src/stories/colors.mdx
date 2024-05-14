@@ -1,0 +1,57 @@
+import {Meta, ColorPalette, ColorItem} from "@storybook/blocks";
+import tailwindConfig from '../../tailwind.config.js'
+import resolveConfig from 'tailwindcss/resolveConfig'
+
+export const fullConfig = resolveConfig(tailwindConfig)
+export const colors = fullConfig.theme.colors
+
+
+
+
+<Meta title="Design Tokens/Colors"  />
+
+## Core Palette
+
+  <ColorPalette>
+    {
+      Object.entries(colors.core).map(([name, swatches], i) => {
+
+        const colorSwatches = Object.entries(swatches).map(([key, value]) => {
+          return (
+           value
+          )
+        })
+
+        return(
+          <ColorItem
+            key={i}
+            title={`${name.toUpperCase()}`}
+            subtitle={`Core palette`}
+            colors={colorSwatches}
+          />
+        )
+      })
+    }
+
+</ColorPalette>
+
+## Secondary Palette
+
+  <ColorPalette>
+    {
+      Object.entries(colors.secondary).map(([name, swatches], i) => {
+
+
+
+        return(
+          <ColorItem
+            key={i}
+            title={`${name.toUpperCase()}`}
+            subtitle={`Secondary palette`}
+            colors={[swatches]}
+          />
+        )
+      })
+    }
+
+    </ColorPalette>
