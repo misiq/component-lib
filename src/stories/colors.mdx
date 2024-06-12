@@ -1,27 +1,20 @@
 import {Meta, ColorPalette, ColorItem} from "@storybook/blocks";
-import tailwindConfig from '../../tailwind.config.js'
+import tailwindConfig from '../../tailwind.config.ts'
 import resolveConfig from 'tailwindcss/resolveConfig'
 
 export const fullConfig = resolveConfig(tailwindConfig)
 export const colors = fullConfig.theme.colors
 
-
-
-
 <Meta title="Design Tokens/Colors"  />
-
 ## Core Palette
-
-  <ColorPalette>
+<ColorPalette>
     {
       Object.entries(colors.core).map(([name, swatches], i) => {
-
         const colorSwatches = Object.entries(swatches).map(([key, value]) => {
           return (
            value
           )
         })
-
         return(
           <ColorItem
             key={i}
@@ -36,13 +29,9 @@ export const colors = fullConfig.theme.colors
 </ColorPalette>
 
 ## Secondary Palette
-
-  <ColorPalette>
+<ColorPalette>
     {
       Object.entries(colors.secondary).map(([name, swatches], i) => {
-
-
-
         return(
           <ColorItem
             key={i}
@@ -55,3 +44,70 @@ export const colors = fullConfig.theme.colors
     }
 
     </ColorPalette>
+
+
+## Content Palette
+<ColorPalette>
+  {
+    Object.entries(colors.content).map(([name, swatches], i) => {
+      const colorSwatches = Object.entries(swatches).map(([key, value]) => {
+        return (
+          value
+        )
+      })
+      return(
+        <ColorItem
+          key={i}
+          title={`${name.toUpperCase()}`}
+          subtitle={`Secondary palette`}
+          colors={colorSwatches}
+        />
+      )
+    })
+  }
+
+</ColorPalette>
+
+## Background Palette
+<ColorPalette>
+  {
+    Object.entries(colors.background).map(([name, swatches], i) => {
+      const colorSwatches = Object.entries(swatches).map(([key, value]) => {
+        return (
+          value
+        )
+      })
+      return(
+        <ColorItem
+          key={i}
+          title={`${name}`}
+          subtitle={`Secondary palette`}
+          colors={colorSwatches}
+        />
+      )
+    })
+  }
+
+</ColorPalette>
+
+## Border Palette
+<ColorPalette>
+  {
+    Object.entries(colors.border).map(([name, swatches], i) => {
+      const colorSwatches = Object.entries(swatches).map(([key, value]) => {
+        return (
+          value
+        )
+      })
+      return(
+        <ColorItem
+          key={i}
+          title={`${name}`}
+          subtitle={`Secondary palette`}
+          colors={colorSwatches}
+        />
+      )
+    })
+  }
+
+</ColorPalette>

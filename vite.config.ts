@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from 'tailwindcss'
-import dts from 'vite-plugin-dts'
-import { resolve } from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from 'tailwindcss';
+import dts from 'vite-plugin-dts';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +10,8 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      include: './src/lib/**/*',
+      exclude: ['./src/lib/**/*.stories.tsx'],
+      include: './src/lib/**/*.tsx',
     }),
   ],
   css: {
@@ -40,4 +41,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

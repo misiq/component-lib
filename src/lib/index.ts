@@ -1,2 +1,4 @@
-import './tailwind/theme.css'
-export * from './components'
+import './tailwind/theme.css';
+// import '../assets/fonts/fonts.css';
+
+export * from './components';
